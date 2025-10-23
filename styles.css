@@ -1,0 +1,73 @@
+:root{
+  --bg:#0f1223; --panel:#131735; --accent:#66e3ff; --accent2:#8b5cf6; --text:#eef2ff; --muted:#aab2cc;
+  --ok:#10b981; --warn:#f59e0b; --danger:#ef4444; --radius:16px; --shadow:0 10px 30px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; font-family:ui-sans-serif,system-ui,Segoe UI,Roboto,Arial; color:var(--text);
+  background: radial-gradient(1200px 600px at 10% -10%, #1b2147 0%, transparent 60%),
+              radial-gradient(1000px 600px at 110% 10%, #261c53 0%, transparent 60%),
+              linear-gradient(180deg, #0a0f21, #0b1024 45%, #0a1020);
+}
+.container{max-width:1100px; margin:0 auto; padding:24px}
+.header{
+  display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:18px;
+}
+.brand{display:flex; align-items:center; gap:12px;}
+.logo{
+  width:40px; height:40px; border-radius:12px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2)); box-shadow: var(--shadow);
+}
+.brand h1{font-size:20px; margin:0; letter-spacing:.5px}
+.toolbar{display:flex; gap:10px; flex-wrap:wrap}
+.input, .select{
+  background:#0e1430; color:var(--text); border:1px solid rgba(255,255,255,.08);
+  border-radius:12px; padding:10px 12px; outline:none; min-width:200px;
+}
+.button{
+  cursor:pointer; border:0; border-radius:12px; background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:#0b0e1a; font-weight:700; padding:10px 14px; box-shadow: var(--shadow);
+}
+.grid{display:grid; grid-template-columns: repeat( auto-fill, minmax(220px,1fr) ); gap:16px; margin-top:12px}
+.card{
+  background: #0f1636; border:1px solid rgba(255,255,255,.08); border-radius: var(--radius);
+  box-shadow: var(--shadow); overflow: hidden; display:flex; flex-direction:column;
+}
+.card .img{
+  height:140px; background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,0)),
+             radial-gradient(400px 200px at 100% -20%, rgba(139,92,246,.3), transparent 60%),
+             radial-gradient(300px 200px at 0% 0%, rgba(102,227,255,.25), transparent 60%);
+  display:flex; align-items:center; justify-content:center; font-weight:800; font-size:42px; opacity:.95;
+}
+.card .body{padding:14px}
+.title{margin:0 0 6px 0; font-size:16px}
+.meta{font-size:13px; color:var(--muted); display:flex; justify-content:space-between; gap:8px}
+.price{font-weight:800}
+.qty{display:flex; align-items:center; gap:8px; margin-top:10px}
+.qty button{
+  width:30px; height:30px; border-radius:10px; border:1px solid rgba(255,255,255,.1); background:#0c1330; color:var(--text); cursor:pointer;
+}
+.add{margin-top:12px; width:100%}
+.footer{margin-top:28px; color:var(--muted); font-size:12px; text-align:center}
+
+.cart-drawer{
+  position: fixed; right: 0; top: 0; height: 100%; width: 360px; max-width: 92vw;
+  background:#0d1433; border-left:1px solid rgba(255,255,255,.1);
+  transform: translateX(100%); transition: transform .3s ease; z-index: 50;
+  display:flex; flex-direction:column;
+}
+.cart-drawer.open{ transform: translateX(0); }
+.cart-header{display:flex; align-items:center; justify-content:space-between; padding:16px; border-bottom:1px solid rgba(255,255,255,.08)}
+.cart-items{flex:1; overflow:auto; padding:12px; display:flex; flex-direction:column; gap:10px}
+.cart-item{
+  display:grid; grid-template-columns: 48px 1fr auto; gap:10px; align-items:center;
+  background:#0f1636; border:1px solid rgba(255,255,255,.08); border-radius:12px; padding:10px;
+}
+.cart-item .thumb{width:48px; height:48px; border-radius:10px; background:linear-gradient(135deg,var(--accent),var(--accent2)); display:flex; align-items:center; justify-content:center; font-weight:800}
+.cart-item .name{font-size:14px; margin:0}
+.cart-item .qty-controls{display:flex; gap:6px; align-items:center}
+.cart-footer{padding:16px; border-top:1px solid rgba(255,255,255,.08); display:grid; gap:8px}
+.total{display:flex; align-items:center; justify-content:space-between; font-size:16px; font-weight:800}
+.badge{font-size:12px; padding:2px 8px; border-radius:999px; background:rgba(139,92,246,.2); border:1px solid rgba(139,92,246,.35)}
+@media (max-width:560px){ .input{min-width:unset; flex:1} }

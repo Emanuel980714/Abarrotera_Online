@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Abarrotera en Línea · Mini</title>
+  <meta name="description" content="Mini tienda de abarrotes con productos básicos, búsqueda, categorías y carrito simple.">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <h1>Abarrotera en Línea</h1>
+      </div>
+      <div class="toolbar">
+        <input id="search" class="input" type="search" placeholder="Buscar producto… (arroz, leche…)" />
+        <select id="category" class="select" aria-label="Categoría"></select>
+        <button id="openCart" class="button">Carrito</button>
+      </div>
+    </div>
+
+    <div id="grid" class="grid" aria-live="polite"></div>
+
+    <div class="footer">
+      <p>Interfaz de ejemplo pensada para apps WebView (Android). No requiere internet.</p>
+    </div>
+  </div>
+
+  <!-- Cart drawer -->
+  <aside class="cart-drawer" aria-label="Carrito de compras" role="dialog" aria-modal="true">
+    <div class="cart-header">
+      <strong>Tu carrito</strong>
+      <button id="closeCart" class="button" style="padding:6px 10px">Cerrar</button>
+    </div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="total"><span>Total</span> <span id="total">$0.00</span></div>
+      <button class="button">Proceder al pedido (demo)</button>
+    </div>
+  </aside>
+
+  <script src="app.js"></script>
+</body>
+</html>
